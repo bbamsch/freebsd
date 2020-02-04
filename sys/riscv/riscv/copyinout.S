@@ -151,6 +151,7 @@ END(copyin)
  * int copyinstr(const void *udaddr, void *kaddr, size_t len, size_t *done)
  */
 ENTRY(copyinstr)
+	mv	a4, x0		/* Init copy scratch */
 	mv	a5, x0		/* count = 0 */
 	beqz	a2, 3f		/* If len == 0 then skip loop */
 
